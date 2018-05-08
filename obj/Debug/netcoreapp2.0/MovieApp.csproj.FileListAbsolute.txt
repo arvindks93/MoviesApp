@@ -1,0 +1,10 @@
+C:\M1-L9-LS1-Begin\bin\Debug\netcoreapp2.0\MovieApp.deps.json
+C:\M1-L9-LS1-Begin\bin\Debug\netcoreapp2.0\MovieApp.runtimeconfig.json
+C:\M1-L9-LS1-Begin\bin\Debug\netcoreapp2.0\MovieApp.runtimeconfig.dev.json
+C:\M1-L9-LS1-Begin\bin\Debug\netcoreapp2.0\MovieApp.dll
+C:\M1-L9-LS1-Begin\bin\Debug\netcoreapp2.0\MovieApp.pdb
+C:\M1-L9-LS1-Begin\obj\Debug\netcoreapp2.0\MovieApp.csproj.CoreCompileInputs.cache
+C:\M1-L9-LS1-Begin\obj\Debug\netcoreapp2.0\MovieApp.AssemblyInfoInputs.cache
+C:\M1-L9-LS1-Begin\obj\Debug\netcoreapp2.0\MovieApp.AssemblyInfo.cs
+C:\M1-L9-LS1-Begin\obj\Debug\netcoreapp2.0\MovieApp.dll
+C:\M1-L9-LS1-Begin\obj\Debug\netcoreapp2.0\MovieApp.pdb
