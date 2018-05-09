@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Module1Helper.DeleteItem();
+            Module2Helper.Sort();
            // ConsoleTables.Format.Default.ToString("Hello");
         }
     }
