@@ -100,7 +100,10 @@ namespace MovieApp
                         (f, r) => new { f.Title, r.Code, r.Name });
             ConsoleTable.From(films).Write();       
         }
-
+        public static void MigrationAddColumn()
+        {
+            Console.WriteLine(nameof(MigrationAddColumn));
+        }
         private class Expression1<T>
         {
         }

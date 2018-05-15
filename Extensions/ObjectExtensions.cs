@@ -8,7 +8,6 @@ namespace MovieApp.Extensions
         {
             return input.Copy(new TResult());
         }
-
         public static TResult Copy<TSource, TResult>(this TSource input, TResult output, bool skipKeys = true) where TResult : new()
         {
             if (input == null)
