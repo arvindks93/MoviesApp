@@ -11,9 +11,10 @@ using System;
 namespace MovieApp.Migrations
 {
     [DbContext(typeof(MoviesContext))]
-    partial class MoviesContextModelSnapshot : ModelSnapshot
+    [Migration("20180519181233_AddedApplicationUser")]
+    partial class AddedApplicationUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,9 +95,6 @@ namespace MovieApp.Migrations
 
                     b.HasKey("FilmId");
 
-                    b.HasIndex("Rating")
-                        .HasName("film-rating-name");
-
                     b.ToTable("film");
                 });
 
@@ -130,19 +128,6 @@ namespace MovieApp.Migrations
                         .HasName("film_category_category_fk_idx");
 
                     b.ToTable("film_category");
-                });
-
-            modelBuilder.Entity("MovieApp.Entities.FilmInfo", b =>
-                {
-                    b.Property<string>("Title");
-
-                    b.Property<int>("ReleaseYear");
-
-                    b.Property<string>("Rating");
-
-                    b.HasKey("Title", "ReleaseYear");
-
-                    b.ToTable("Filminfo");
                 });
 
             modelBuilder.Entity("MovieApp.Entities.FilmActor", b =>

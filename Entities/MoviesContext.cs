@@ -11,7 +11,8 @@ namespace MovieApp.Entities
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<FilmActor> FilmActors { get; set; }
         public virtual DbSet<FilmCategory> FilmCategories { get; set; }
-
+        public virtual DbSet<ApplicationUser> ApplicationUsers{get;set;}
+        public virtual DbSet<FilmInfo> FilmInfos{get;set;}
         private static MoviesContext _context;
         public static MoviesContext Instance
         {
@@ -36,6 +37,9 @@ namespace MovieApp.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<FilmInfo>(entity=> entity.HasKey(e=>new{e.Title, e.ReleaseYear}));
+            modelBuilder.Entity<Film>(f=> f.HasIndex(e=> e.Rating)
+            .HasName("film-rating-name"));
             modelBuilder.Entity<Actor>(entity =>
             {
                 entity.ToTable("actor");

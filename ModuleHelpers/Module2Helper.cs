@@ -102,7 +102,35 @@ namespace MovieApp
         }
         public static void MigrationAddColumn()
         {
-            Console.WriteLine(nameof(MigrationAddColumn));
+            var film=MoviesContext.Instance.Films
+            .FirstOrDefault(f=> f.Title.Contains("the first avemger"));
+            if (film != null)
+            {
+                Console.WriteLine($"updating films with is {film.FilmId} ");
+                film.FilmId=124;
+                MoviesContext.Instance.SaveChanges();
+            }
+
+            var films=MoviesContext.Instance.Films
+            .Select(f=> f.Copy<Film, FilmModel>());
+            ConsoleTable.From(films).Write();
+        }
+        public static void MigrationAddTable()
+        {
+            Console.WriteLine(nameof(MigrationAddTable));
+        }
+        public static void CompositeKeys()
+        {
+            var data=new []{
+                new FilmInfo{Title="Thor", ReleaseYear=2011, Rating="PG-13"},
+                new FilmInfo{Title="The Avenger", ReleaseYear=2012, Rating="PG-13"},
+                new FilmInfo{Title="Rogue One", ReleaseYear=2016, Rating="PG-13"}
+            };
+            MoviesContext.Instance.FilmInfos.AddRange(data);
+            MoviesContext.Instance.SaveChanges();
+            var info=MoviesContext.Instance.FilmInfos;
+            ConsoleTable.From(info).Write();
+
         }
         private class Expression1<T>
         {

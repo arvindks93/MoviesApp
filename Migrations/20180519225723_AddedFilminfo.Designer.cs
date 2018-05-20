@@ -11,9 +11,10 @@ using System;
 namespace MovieApp.Migrations
 {
     [DbContext(typeof(MoviesContext))]
-    partial class MoviesContextModelSnapshot : ModelSnapshot
+    [Migration("20180519225723_AddedFilminfo")]
+    partial class AddedFilminfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,11 +135,11 @@ namespace MovieApp.Migrations
 
             modelBuilder.Entity("MovieApp.Entities.FilmInfo", b =>
                 {
-                    b.Property<string>("Title");
+                    b.Property<int>("Title");
 
                     b.Property<int>("ReleaseYear");
 
-                    b.Property<string>("Rating");
+                    b.Property<int>("Rating");
 
                     b.HasKey("Title", "ReleaseYear");
 
